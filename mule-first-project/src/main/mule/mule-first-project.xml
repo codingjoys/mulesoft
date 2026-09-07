@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="mule-first-projectFlow" doc:id="51671a2b-5f8f-4365-910e-83e4952799b4" >
+		<logger level="INFO" doc:name="Logger" doc:id="8466d518-da07-41ae-96a9-d1bc0afb1b52" message="#['Mule first project']"/>
+		<set-variable value="#['Y']" doc:name="first" doc:id="8353d491-3a85-4bf8-84ba-b0c0d89d5456" variableName="first"/>
+		<choice doc:name="Choice" doc:id="d3850687-08ea-4e57-85df-c410a140b91f" >
+			<when expression='#[vars.first == "Y"]'>
+				<logger level="INFO" doc:name="Logger" doc:id="07a1fc86-4f8a-463f-8a88-775054af905c" message="#['Variable is set as Y']"/>
+			</when>
+			<otherwise >
+				<logger level="INFO" doc:name="Logger" doc:id="b8d39b65-e3f7-438b-b71c-2676548e7081" message="#['Variable is not Y']"/>
+			</otherwise>
+		</choice>
+	</flow>
+</mule>
